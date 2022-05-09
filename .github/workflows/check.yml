@@ -24,25 +24,25 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      
+
       - name: install pnpm
         uses: pnpm/action-setup@v2.2.1
         with:
           version: 6.32.4
-        
+
       # Runs a single command using the runners shell
       - name: install nodejs
         uses: actions/setup-node@v3.1.0
-        with: 
+        with:
           node-version: 16.14
           cache: 'pnpm'
-        
+
       - name: Get cached dependencies
         uses: actions/cache@v2
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-          
+
       - name: install deps
         run: pnpm install --shamefully-hoist
   validate:
@@ -76,7 +76,7 @@ jobs:
       - name: Run linter
         run: pnpm lint
 
-      - name: Test
+      - name: typecheck
         run: pnpm typecheck
 
       - name: Test

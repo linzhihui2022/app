@@ -27,6 +27,8 @@ jobs:
       
       - name: install pnpm
         uses: pnpm/action-setup@v2.2.1
+        with:
+          version: 6.32.4
         
       # Runs a single command using the runners shell
       - name: install nodejs
@@ -53,6 +55,8 @@ jobs:
 
       - name: Install pnpm 6.32.4
         uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.32.4
 
       - name: Set node version to 16.14
         uses: actions/setup-node@v2

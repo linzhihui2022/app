@@ -1,3 +1,5 @@
+[![CI](https://github.com/linzhihui2022/nuxt-www/actions/workflows/check.yml/badge.svg)](https://github.com/linzhihui2022/nuxt-www/actions/workflows/check.yml)
+
 # Nuxt 3 Minimal Starter
 
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.

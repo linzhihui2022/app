@@ -44,7 +44,8 @@ jobs:
 
       - name: Build
         run: pnpm build
-        
+      
+
       - name: deploy
         uses: appleboy/scp-action@master
         with: 
@@ -54,3 +55,9 @@ jobs:
           port: 22
           source: ".output/"
           target: ${{secrets.SERVER_TARGET}}
+      - name: install sshpass
+        run: sudo apt-get install sshpass
+        
+      - name: restart pm2
+        run: sshpass -p ${{ secrets.SERVER_PASSWORD }} ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "${{ secrets.PM2_RESTART }}"
+        

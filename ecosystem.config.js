@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "NuxtAppName",
+      name: "app",
       exec_mode: "cluster",
       instances: "max",
       script: "server/output/server/index.mjs",
